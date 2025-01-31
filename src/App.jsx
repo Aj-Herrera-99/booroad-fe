@@ -16,7 +16,7 @@ function App() {
                 <Routes>
                     <Route path="/" Component={DefaultLayout}>
                         <Route index Component={Homepage}></Route>
-                        <Route path="/journey" Component={DetailJourney}></Route>
+                        <Route path="/journey/:id" Component={DetailJourney}></Route>
                         <Route path="/about" Component={About}></Route>
                         <Route path="/contacts" Component={Contacts}></Route>
                         <Route path="*" Component={NotFound}></Route>
