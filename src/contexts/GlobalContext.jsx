@@ -1,14 +1,14 @@
-import { CreateContext, useContext, useEffect } from "react";
+import { createContext, useContext, useEffect } from "react";
 import axios from "axios";
-import NotFoundPage from "../pages/NotFound";
+import NotFound from "../pages/NotFound";
 
-const GlobalContext = CreateContext(); 
+const GlobalContext = createContext(); 
 
 const GlobalContextProvider = ({ children }) => {
     // useState
 
 
-    useEffect(() => {})
+    // useEffect(() => {})
 
     const collectionData = {
 

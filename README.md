@@ -1,7 +1,12 @@
-# My React Template
+# BooRoad
 
-# Libraries installed
+# Before getting started
+- npm i 
+- npm run dev
 
--   Tailwind css
--   react-router-dom
--   axios
+# Create .env file in root directory
+```
+VITE_API_JOURNEYS = http://localhost:3000/api/journeys
+VITE_API_JOURNEYS = http://localhost:3000/api/journeys/api/participants
+
+```
