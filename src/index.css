@@ -12,3 +12,62 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FB5607;
+}
+
+.logo-header {
+    width: 50px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul li {
+    padding: 10px;
+    color: #6800fa;
+    text-decoration: underline;
+    text-shadow: 5px 2px 5px #333;
+}
+
+.navbar ul li:hover {
+    color: #26ae1f;
+}
+
+.navbar .btn {
+    background-color: #8338EC;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 25%;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FB5607;
+}
+
+.links {
+    display: flex;
+    padding: 10px;
+}
+
+.links ul li {
+    color: #6800fa;
+    text-decoration: underline;
+    text-shadow: 5px 2px 5px #333;
+}
+
+.links ul li:hover {
+    color: #26ae1f;
+}
