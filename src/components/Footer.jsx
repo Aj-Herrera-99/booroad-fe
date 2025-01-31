@@ -1,3 +1,4 @@
+
 function Footer() {
   return (
     <footer className="min-h-[10vh]">
@@ -22,7 +23,7 @@ function Footer() {
         </ul>
       </div>
       <div className="icons">
-
+        <i className="fa-brands fa-facebook"></i>
       </div>
     </footer>
   )
