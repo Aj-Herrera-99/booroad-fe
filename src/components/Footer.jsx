@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function Footer() {
   return (
@@ -23,7 +24,7 @@ function Footer() {
         </ul>
       </div>
       <div className="icons">
-        <i className="fa-brands fa-facebook"></i>
+        <FontAwesomeIcon icon="fa-brands fa-facebook" />
       </div>
     </footer>
   )
