@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { FaMagnifyingGlass, FaXmark } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
     const windowRef = useRef(null);
@@ -13,7 +13,9 @@ function Header() {
 
     return (
         <header className="fixed w-screen h-[10vh] top-0 left-0 bg-blue-300 px-4 flex justify-between items-center">
-            <h2 className="text-3xl font-light tracking-wider">BooRoad</h2>
+            <Link to={"/"}>
+              <h2 className="text-3xl font-light tracking-wider">BooRoad</h2>
+            </Link>
 
             <GiHamburgerMenu className="text-xl" onClick={showWindowMenu} />
             <WindowMenu windowRef={windowRef} />
