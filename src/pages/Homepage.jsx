@@ -23,7 +23,12 @@ function Homepage() {
 
     return (
         <>
-            <Journeys>
+            <Journeys title="Viaggi in corso">
+                {journeys.map((journey) => (
+                    <JourneyCard key={journey.id} journey={journey} />
+                ))}
+            </Journeys>
+            <Journeys title="Viaggi in programma">
                 {journeys.map((journey) => (
                     <JourneyCard key={journey.id} journey={journey} />
                 ))}

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-export function Journeys({ children }) {
+export function Journeys({ children, title }) {
     const cardsContRef = useRef(null);
 
     const dropDownToggle = () => {
@@ -10,7 +10,7 @@ export function Journeys({ children }) {
 
     return (
         <section className="journey mb-4">
-            <h2 className="text-3xl font-semibold mb-2">Viaggi in corso</h2>
+            <h2 className="text-3xl font-semibold mb-2">{title}</h2>
             <div
                 ref={cardsContRef}
                 className="flex flex-col gap-3 h-[200px] overflow-hidden"
