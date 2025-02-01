@@ -13,7 +13,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+/* body {
     overflow-y: scroll;
     background-color: goldenrod;
 }
@@ -112,12 +112,12 @@ footer {
 
 .links ul li:hover {
     color: #26ae1f;
-}
-
+} */
+/* 
 .icons {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
+    flex-wrap: wrap;
+    justify-content: center;
     gap:10px;
 }
 
@@ -139,4 +139,4 @@ footer {
 .youtube {
     color: goldenrod;
     font-size: 30px;
-}
+} */
