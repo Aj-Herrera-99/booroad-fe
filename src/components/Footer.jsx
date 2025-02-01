@@ -5,7 +5,7 @@ import { FaYoutube } from "react-icons/fa";
 
 function Footer() {
     return (
-        <footer className="min-h-[10vh]">
+        <footer className="min-h-[10vh] [&>*]:w-1/3">
             <div className="logo-footer">
                 <h2>Booroad</h2>
             </div>
