@@ -2,7 +2,7 @@ function Header() {
   return (
     <header className="fixed w-screen h-[10vh] top-0 left-0">
       <div className="logo-header">
-        <img src="" alt="logo" />
+        <h2>Booroad</h2>
       </div>
       <div className="navbar">
         <ul>

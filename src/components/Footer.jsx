@@ -7,7 +7,7 @@ function Footer() {
     return (
         <footer className="min-h-[10vh]">
             <div className="logo-footer">
-                <img src="" alt="logo" />
+                <h2>Booroad</h2>
             </div>
             <div className="links">
                 <ul>
