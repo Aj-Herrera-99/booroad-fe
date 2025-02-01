@@ -15,6 +15,7 @@
 
 body {
     overflow-y: scroll;
+    background-color: goldenrod;
 }
 
 body::-webkit-scrollbar {
@@ -27,6 +28,12 @@ header {
     align-items: center;
     background: rgb(131, 58, 180);
     background: linear-gradient(275deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+h2 {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
 }
 
 .navbar ul {
