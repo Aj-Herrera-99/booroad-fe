@@ -13,15 +13,19 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FB5607;
-}
-
-.logo-header {
-    width: 50px;
+    background-color: blue;
 }
 
 .navbar ul {
@@ -32,7 +36,7 @@ header {
 
 .navbar ul li {
     padding: 10px;
-    color: #6800fa;
+    color: goldenrod;
     text-decoration: underline;
     text-shadow: 5px 2px 5px #333;
 }
@@ -42,19 +46,37 @@ header {
 }
 
 .navbar .btn {
-    background-color: #8338EC;
-    color: white;
+    background-color: goldenrod;
+    color: black;
     text-transform: uppercase;
     border-radius: 25%;
     padding: 10px;
     margin-left: 10px;
 }
 
+.journey {
+    background-color: goldenrod;
+}
+
+.journey-card {
+    background-color: blue;
+    color: white;
+}
+
+.journey-details {
+    background-color: goldenrod;
+}
+
+.participant {
+    background-color: blue;
+    color: white;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FB5607;
+    background-color: rgb(0, 0, 255);
 }
 
 .links {
@@ -70,11 +92,37 @@ footer {
 }
 
 .links ul li {
-    color: #6800fa;
+    color: goldenrod;
     text-decoration: underline;
     text-shadow: 5px 2px 5px #333;
 }
 
 .links ul li:hover {
     color: #26ae1f;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.facebook {
+    color: goldenrod;
+    font-size: 30px;
+}
+
+.instagram {
+    color: goldenrod;
+    font-size: 30px;
+}
+
+.twitter {
+    color: goldenrod;
+    font-size: 30px;
+}
+
+.youtube {
+    color: goldenrod;
+    font-size: 30px;
 }
