@@ -7,32 +7,32 @@ import { Journeys } from "./Journeys";
 const apiJourneys = import.meta.env.VITE_API_JOURNEYS;
 
 function Homepage() {
-    const [journeys, setJourneys] = useState([1, 2, 3, 4, 5]);
+    const [journeys, setJourneys] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    console.log(journeys);
-
     useEffect(() => {
-        setIsLoading(false);
+        setIsLoading(true);
         axios
             .get(apiJourneys)
-            .then((res) => setJourneys(res.data))
+            .then((res) => setJourneys(res.data.results))
             .catch((err) => console.error(err))
-            .finally(() => setIsLoading(true));
+            .finally(() => setIsLoading(false));
     }, []);
+
+    if (isLoading) return <div>is loading...</div>;
 
     return (
         <>
             <Journeys>
                 {journeys.map((journey) => (
-                    <JourneyCard key={journey.id} id={journey.id} />
+                    <JourneyCard key={journey.id} journey={journey} />
                 ))}
             </Journeys>
-            <Journeys>
+            {/* <Journeys>
                 {journeys.map((journey) => (
                     <JourneyCard key={journey?.id} />
                 ))}
-            </Journeys>
+            </Journeys> */}
         </>
     );
 }
