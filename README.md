@@ -9,6 +9,6 @@
 
 ```
 VITE_API_JOURNEYS = http://localhost:3000/api/journeys
-VITE_API_PARTICIPANTS = http://localhost:3000/api/journeys/api/participants
+VITE_API_PARTICIPANTS = http://localhost:3000/api/participants
 VITE_API_URL = http://localhost:3000
 ```
