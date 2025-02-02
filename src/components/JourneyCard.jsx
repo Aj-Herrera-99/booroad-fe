@@ -17,7 +17,7 @@ function JourneyCard({ journey }) {
             <div className="absolute inset-0 bg-black/65 -z-10"></div>
             <Link
                 to={`/journey/${id}`}
-                className="flex flex-col justify-between text-white journey-card"
+                className="flex w-full flex-col justify-between text-white journey-card"
             >
                 <span>Destination: {destination}</span>
                 <span>Departure: {initial_date}</span>
