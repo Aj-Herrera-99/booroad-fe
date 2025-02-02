@@ -4,16 +4,16 @@ export function Journeys({ children, title }) {
     const cardsContRef = useRef(null);
 
     const dropDownToggle = () => {
-        cardsContRef.current.classList.toggle("h-[200px]")
+        cardsContRef.current.classList.toggle("h-[260px]")
         cardsContRef.current.classList.toggle("overflow-hidden")
     };
 
     return (
         <section className="journey mb-4">
-            <h2 className="text-3xl font-semibold mb-2">{title}</h2>
+            <h2 className="text-xl font-semibold mb-2">{title}</h2>
             <div
                 ref={cardsContRef}
-                className="flex flex-col gap-3 h-[200px] overflow-hidden"
+                className="flex flex-col gap-3 h-[260px] overflow-hidden"
             >
                 {children}
             </div>
