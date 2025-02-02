@@ -9,7 +9,7 @@ export function Journeys({ children, title }) {
     };
 
     return (
-        <section className="journey mb-4">
+        <section className="journey my-4">
             <h2 className="text-xl font-semibold mb-2">{title}</h2>
             <div
                 ref={cardsContRef}
@@ -17,8 +17,11 @@ export function Journeys({ children, title }) {
             >
                 {children}
             </div>
-            <div className="text-end my-2">
-                <button onClick={dropDownToggle} className="text-sm">
+            <div className="text-end mt-3">
+                <button
+                    onClick={dropDownToggle}
+                    className="text-sm border-x-2 rounded-r-md  rounded-l-md border-slate-400 p-1"
+                >
                     Espandi
                 </button>
             </div>

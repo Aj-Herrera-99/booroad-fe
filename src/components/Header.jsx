@@ -4,23 +4,22 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
 
 function Header() {
-    const windowRef = useRef(null);
+    const dropDownRef = useRef(null);
 
-    const showWindowMenu = () => {
+    const showDropdown = () => {
         console.log("test");
-        windowRef.current.classList.remove("-translate-y-full");
+        dropDownRef.current.classList.remove("-translate-y-full");
     };
 
     return (
-        <header className="fixed w-screen h-[10vh] z-20 top-0 left-0 bg-blue-300 px-4 flex justify-between items-center drop-shadow-xl">
+        <header className="fixed w-screen h-[10vh] z-20 top-0 left-0 bg-blue-300 px-4 flex justify-between items-center drop-shadow-xl rounded-b-2xl">
             <span></span>
             <Link to={"/"} className=" w-[60px]">
                 <img src="/logo_2.png" alt="" />
             </Link>
 
-            <GiHamburgerMenu className="text-xl" onClick={showWindowMenu} />
-            <WindowMenu windowRef={windowRef} />
-            {/* <div className="navbar"></div> */}
+            <GiHamburgerMenu className="text-xl" onClick={showDropdown} />
+            <DropdownMenu dropdownRef={dropDownRef} />
         </header>
     );
 }
@@ -31,21 +30,21 @@ const appLinks = [
     { to: "/contacts", label: "Contacts" },
 ];
 
-function WindowMenu({ windowRef }) {
-    const hideWindowMenu = () => {
-        windowRef.current.classList.add("-translate-y-full");
+function DropdownMenu({ dropdownRef }) {
+    const hideDropdown = () => {
+        dropdownRef.current.classList.add("-translate-y-full");
     };
     return (
         <div
-            ref={windowRef}
-            className="fixed inset-0 h-fit bg-black/90 transition-all duration-300 -translate-y-full text-white flex-col px-4 py-6 text-lg ease-out rounded-b-2xl"
+            ref={dropdownRef}
+            className="fixed inset-0 h-fit bg-black/95 transition-all duration-300 -translate-y-full text-white flex-col p-4 text-lg ease-out rounded-b-2xl"
         >
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
                 <form className="flex items-center gap-2">
-                    <input type="search" name="search" id="search" />
-                    <FaMagnifyingGlass className="text-xl relative -translate-x-8 text-black" />
+                    <input className="rounded-md px-2 py-1 text-black" type="search" name="search" id="search" />
+                    <FaMagnifyingGlass className="text-xl text-white" />
                 </form>
-                <FaXmark onClick={hideWindowMenu} className=" text-2xl" />
+                <FaXmark onClick={hideDropdown} className=" text-2xl" />
             </div>
             <div className="flex justify-around mt-4">
                 {appLinks.map((link, i) => (
