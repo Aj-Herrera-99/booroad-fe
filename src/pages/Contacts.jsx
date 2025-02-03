@@ -7,7 +7,7 @@ function Contacts() {
 
   return (
     <div>
-      <DetailContacts title={"Contacts:"} info={"0548432423"}>
+      <DetailContacts title={"Contatti:"} info={"0548432423"}>
         <MdEmail style={{ display: "inline-block" }} />
       </DetailContacts>
       
