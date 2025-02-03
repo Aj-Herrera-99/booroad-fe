@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -13,7 +14,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+body{
+    @apply bg-emerald-50
+}
+
+/* body {
     overflow-y: scroll;
     background-color: goldenrod;
 }
@@ -112,12 +117,12 @@ footer {
 
 .links ul li:hover {
     color: #26ae1f;
-}
-
+} */
+/* 
 .icons {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
+    flex-wrap: wrap;
+    justify-content: center;
     gap:10px;
 }
 
@@ -139,4 +144,4 @@ footer {
 .youtube {
     color: goldenrod;
     font-size: 30px;
-}
+} */

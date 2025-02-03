@@ -6,7 +6,7 @@ function DefaultLayout() {
     return (
         <>
             <Header />
-            <main className="mt-[10vh] min-h-[80vh] p-4">
+            <main className="mt-[10vh] min-h-[80vh] p-4 sm:mx-[3vw] lg:mx-[25vw]">
                 <Outlet />
             </main>
             <div className=""></div>
