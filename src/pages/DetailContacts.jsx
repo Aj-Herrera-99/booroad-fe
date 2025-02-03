@@ -16,8 +16,8 @@ function DetailContacts({ title, info, children }) {
             <div className="participant p-2 border border-slate-400 rounded-lg mb-3">
                 <ul>
                     <div>
-                        <li className="flex justify-between" ref={accordionRef} onClick={accordionToggle}><strong>{title}</strong>
-                            {!dropToggle ? <IoMdArrowDropdown className="my-auto" /> : <IoMdArrowDropup className="my-auto" />}
+                        <li className="flex justify-between cursor-pointer" ref={accordionRef} onClick={accordionToggle}><strong>{title}</strong>
+                            {!dropToggle ? <IoMdArrowDropdown className="my-auto cursor-pointer" /> : <IoMdArrowDropup className="my-auto" />}
                         </li>
 
                         <div ref={accordionRef}>
