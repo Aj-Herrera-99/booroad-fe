@@ -87,8 +87,8 @@ function DropdownMenu({ dropdownRef }) {
                         key={i}
                         to={link.to}
                         className={({ isActive }) =>
-                            "py-1 px-2 rounded-lg" +
-                            (isActive ? " border-b " : "")
+                            "py-1 px-2 rounded-lg text-white/60" +
+                            (isActive ? " text-white/100" : "")
                         }
                     >
                         {link.label}
