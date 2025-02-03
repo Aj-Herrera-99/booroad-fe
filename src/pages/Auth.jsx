@@ -27,6 +27,7 @@ function Auth() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        window.sessionStorage.setItem("user", userRef.current.value);
         if (
             userRef.current.value === "admin" &&
             passwordRef.current.value === "admin"

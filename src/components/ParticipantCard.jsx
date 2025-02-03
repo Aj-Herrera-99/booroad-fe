@@ -10,7 +10,6 @@ export function ParticipantCard({ participant }) {
     };
     return (
         <div
-            // onClick={showInfo}
             className="participant p-2 border border-slate-400 rounded-lg"
         >
             <ul>
