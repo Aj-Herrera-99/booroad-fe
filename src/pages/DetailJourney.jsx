@@ -15,10 +15,8 @@ function DetailJourney() {
 
     const filteredParticipants = participants.filter((person) => {
         if (inputData.length == 0) return true;
-        return (
-            person.name.toUpperCase().startsWith(inputData.toUpperCase()) ||
-            person.surname.toUpperCase().startsWith(inputData.toUpperCase())
-        );
+        const fullName = `${person.name} ${person.surname}`;
+        return fullName.toLowerCase().includes(inputData.toLowerCase());
     });
 
     const handleInputChange = (e) => {
