@@ -29,19 +29,23 @@ function DetailJourney() {
     return (
         <>
             <section className="journey-details my-4">
-                <h2 className="text-xl font-semibold">
-                    Destinazione: {journey.destination}
-                </h2>
-                <div className="flex justify-between">
-                    <span className="font-semibold">Par: {journey.initial_date}</span>
-                    <span className="font-semibold">Arr: {journey.end_date}</span>
-                </div>
-                <div className="h-[200px]">
-                    <img
-                        src={`${apiUrl}${journey?.image_path}`}
-                        alt=""
-                        className="object-cover h-full w-full rounded-lg"
-                    />
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                    <div className="sm:w-1/2">
+                        <h2 className="text-2xl sm:text-4xl sm:mb-6 font-semibold">
+                            {journey.destination}
+                        </h2>
+                        <div className="flex sm:flex-col gap-2 justify-between text-slate-600">
+                            <span className="font-semibold">Par: {journey.initial_date}</span>
+                            <span className="font-semibold">Arr: {journey.end_date}</span>
+                        </div>
+                    </div>
+                    <div className="sm:w-11/12">
+                        <img
+                            src={`${apiUrl}${journey?.image_path}`}
+                            alt=""
+                            className="object-cover h-full w-full rounded-lg"
+                        />
+                    </div>
                 </div>
             </section>
             <section className="mb-4">

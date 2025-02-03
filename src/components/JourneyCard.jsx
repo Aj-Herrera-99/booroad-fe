@@ -4,7 +4,7 @@ const apiUrl = import.meta.env.VITE_API_URL;
 function JourneyCard({ journey }) {
     const { id, destination, initial_date, end_date } = journey;
     return (
-        <div className="relative p-3 border rounded-lg overflow-hidden min-h-[125px] flex">
+        <div className="relative p-3 border rounded-lg overflow-hidden h-[125px] lg:h-[200px] flex">
             <div
                 className="absolute inset-0 -z-20"
                 style={{

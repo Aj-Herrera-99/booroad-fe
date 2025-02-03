@@ -15,7 +15,7 @@ export function Journeys({ children, title }) {
             <h2 className="text-xl font-semibold mb-2">{title}</h2>
             <div
                 ref={cardsContRef}
-                className="flex flex-col gap-3 h-[260px] overflow-hidden"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 h-[260px] lg:h-[200px] overflow-hidden"
             >
                 {children}
             </div>

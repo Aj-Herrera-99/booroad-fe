@@ -5,7 +5,7 @@ import { FaYoutube } from "react-icons/fa";
 
 function Footer() {
     return (
-        <footer className="h-[10vh] flex items-center gap-4 p-4 bg-blue-300">
+        <footer className="h-[10vh] flex items-center gap-4 p-4 bg-teal-400">
             <h2 className="font-light">BooRoad inc.</h2>
             <div className="links flex gap-4 text-sm">
                 <ul>

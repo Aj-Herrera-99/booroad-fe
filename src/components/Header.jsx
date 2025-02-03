@@ -19,7 +19,7 @@ function Header() {
     };
 
     return (
-        <header className="fixed w-screen h-[10vh] z-20 top-0 left-0 bg-blue-300 px-4 flex justify-between items-center drop-shadow-xl rounded-b-2xl">
+        <header className="fixed w-screen h-[10vh] z-20 top-[-1px] left-0 bg-teal-400/50 px-4 flex justify-between items-center drop-shadow-xl rounded-b-2xl backdrop-blur-md">
             <Link
                 onClick={goBack}
                 className={`${
@@ -47,9 +47,9 @@ function Header() {
 }
 
 const appLinks = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/contacts", label: "Contacts" },
+    { to: "/", label: "Viaggi" },
+    { to: "/about", label: "Chi siamo" },
+    { to: "/contacts", label: "Contatti" },
 ];
 
 function DropdownMenu({ dropdownRef }) {
