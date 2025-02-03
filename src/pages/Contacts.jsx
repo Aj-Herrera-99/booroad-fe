@@ -7,7 +7,7 @@ function Contacts() {
 
   return (
     <div>
-      <DetailContacts title={"Contacts:"} info={"0548432423"}>
+      <DetailContacts title={"Contatti:"} info={"0548432423"}>
         <MdEmail style={{ display: "inline-block" }} />
       </DetailContacts>
       
@@ -15,7 +15,7 @@ function Contacts() {
         <FaPhone style={{ display: "inline-block" }} />
       </DetailContacts>
       
-      <DetailContacts title={"Useful numbers:"} info={"0548432423"}>
+      <DetailContacts title={"Numeri utili:"} info={"0548432423"}>
         <FaInfoCircle style={{ display: "inline-block" }} />
       </DetailContacts>
     </div>
