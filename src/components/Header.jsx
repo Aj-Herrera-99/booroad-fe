@@ -19,35 +19,44 @@ function Header() {
     };
 
     return (
-        <header className="fixed w-screen h-[10vh] z-20 top-[-1px] left-0 bg-teal-400/50 px-4 flex justify-between items-center drop-shadow-xl rounded-b-2xl backdrop-blur-md">
+        <header className="fixed w-screen h-[10vh] z-20 top-[-0.5px] left-0 bg-teal-400/50 px-4 flex justify-between items-center drop-shadow-xl rounded-b-2xl backdrop-blur-md">
+            {/* go back button */}
             <Link
                 onClick={goBack}
                 className={`${
-                    location.pathname === "/" && "hidden"
+                    (location.pathname === "/home" ||
+                        location.pathname === "/") &&
+                    "hidden"
                 } flex items-center w-1/3 -translate-x-4`}
             >
                 <MdKeyboardArrowLeft className="text-3xl" />
                 <span className="-translate-x-1">Indietro</span>
             </Link>
+            {/* solo placeholder per spaziature */}
             <div
                 className={`${
-                    location.pathname === "/" && "!block"
+                    (location.pathname === "/home" ||
+                        location.pathname === "/") &&
+                    "!block"
                 } w-1/3 hidden`}
             ></div>
-            <Link to={"/"} className=" w-[60px]">
+            {/* logo */}
+            <Link to={"/home"} className=" w-[60px]">
                 <img src="/logo_2.png" alt="" />
             </Link>
-
+            {/* Hamburger icon */}
             <div className="text-2xl w-1/3 flex justify-end">
                 <GiHamburgerMenu className="" onClick={showDropdown} />
             </div>
+            {/* Dropdown menu */}
             <DropdownMenu dropdownRef={dropDownRef} />
         </header>
     );
 }
 
 const appLinks = [
-    { to: "/", label: "Viaggi" },
+    { to: "/", label: "Login" },
+    { to: "/home", label: "Viaggi" },
     { to: "/about", label: "Chi siamo" },
     { to: "/contacts", label: "Contatti" },
 ];
@@ -70,14 +79,15 @@ function DropdownMenu({ dropdownRef }) {
                 />
                 <FaMagnifyingGlass className="text-2xl text-white" />
             </form>
-            <nav className="flex justify-around">
+            <nav className="flex flex-col gap-3">
                 {appLinks.map((link, i) => (
                     <NavLink
                         onClick={hideDropdown}
                         key={i}
                         to={link.to}
                         className={({ isActive }) =>
-                            "py-1 px-2" + (isActive ? " border-b " : "")
+                            "py-1 px-2 rounded-lg" +
+                            (isActive ? " border-b " : "")
                         }
                     >
                         {link.label}

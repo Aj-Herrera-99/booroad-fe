@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 import { GlobalContextProvider } from "./contexts/GlobalContext";
+import Auth from "./pages/Auth";
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" Component={DefaultLayout}>
-                        <Route index Component={Homepage}></Route>
+                        <Route index Component={Auth}></Route>
+                        <Route path="/home" Component={Homepage}></Route>
                         <Route path="/journey/:id" Component={DetailJourney}></Route>
                         <Route path="/about" Component={About}></Route>
                         <Route path="/contacts" Component={Contacts}></Route>
