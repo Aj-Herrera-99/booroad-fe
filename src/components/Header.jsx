@@ -70,7 +70,7 @@ function DropdownMenu({ dropdownRef }) {
                 />
                 <FaMagnifyingGlass className="text-2xl text-white" />
             </form>
-            <div className="flex justify-around">
+            <nav className="flex justify-around">
                 {appLinks.map((link, i) => (
                     <NavLink
                         onClick={hideDropdown}
@@ -83,7 +83,7 @@ function DropdownMenu({ dropdownRef }) {
                         {link.label}
                     </NavLink>
                 ))}
-            </div>
+            </nav>
             <div className="mx-auto mt-4">
                 <FaXmark
                     onClick={hideDropdown}
