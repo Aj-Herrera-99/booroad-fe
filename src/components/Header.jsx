@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
+// todo: nascondere hamburger menu quando si è nella auth page
 function Header() {
     const dropDownRef = useRef(null);
     const navigate = useNavigate();
@@ -86,8 +87,8 @@ function DropdownMenu({ dropdownRef }) {
                         key={i}
                         to={link.to}
                         className={({ isActive }) =>
-                            "py-1 px-2 rounded-lg" +
-                            (isActive ? " border-b " : "")
+                            "py-1 px-2 rounded-lg text-white/60" +
+                            (isActive ? " !text-white" : "")
                         }
                     >
                         {link.label}
