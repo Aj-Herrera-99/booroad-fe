@@ -5,22 +5,9 @@ import { FaYoutube } from "react-icons/fa";
 
 function Footer() {
     return (
-        <footer className="min-h-[10vh] [&>*]:w-1/3">
-            <div className="logo-footer">
-                <h2>Booroad</h2>
-            </div>
-            <div className="links">
-                <ul>
-                    <a href="/">
-                        <li>Link</li>
-                    </a>
-                    <a href="/">
-                        <li>Link</li>
-                    </a>
-                    <a href="/">
-                        <li>Link</li>
-                    </a>
-                </ul>
+        <footer className="h-[10vh] flex items-center gap-4 p-4 bg-teal-400">
+            <h2 className="font-light">BooRoad inc.</h2>
+            <div className="links flex gap-4 text-sm">
                 <ul>
                     <a href="/">
                         <li>Link</li>
@@ -44,7 +31,7 @@ function Footer() {
                     </a>
                 </ul>
             </div>
-            <div className="icons">
+            <div className="icons [&>*]:text-xl grow flex justify-end gap-3">
                 <FaFacebook className="facebook" />
                 <FaInstagram className="instagram" />
                 <FaTwitter className="twitter" />
@@ -54,4 +41,4 @@ function Footer() {
     );
 }
 
-export default Footer
+export default Footer;

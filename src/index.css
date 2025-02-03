@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -14,6 +15,10 @@
 }
 
 body {
+    @apply bg-emerald-50
+}
+
+/* body {
     overflow-y: scroll;
 }
 
@@ -111,13 +116,13 @@ footer {
 
 .links ul li:hover {
     color: #26ae1f;
-}
-
+} */
+/* 
 .icons {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px;
 }
 
 .facebook {
@@ -138,4 +143,4 @@ footer {
 .youtube {
     color: goldenrod;
     font-size: 30px;
-}
+} */

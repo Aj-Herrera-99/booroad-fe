@@ -1,7 +1,9 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ParticipantCard } from "../components/ParticipantCard";
 const apiJourneys = import.meta.env.VITE_API_JOURNEYS;
+const apiUrl = import.meta.env.VITE_API_URL;
 
 function DetailJourney() {
     const [journey, setJourney] = useState({});
@@ -25,35 +27,38 @@ function DetailJourney() {
     if (isLoading) return <div>is loading...</div>;
 
     return (
-        <section className="journey-details mb-4">
-            <h1 className="text-3xl font-semibold mb-2">Destinazione: {journey.destination}</h1>
-            <h2 className="text-2xl font-semibold mb-2">Lista partecipanti</h2>
-            <div className="flex flex-col gap-3">
-                {participants.map((person) => (
-                    <ParticipantCard key={person.id} participant={person} />
-                ))}
-            </div>
-        </section>
-    );
-}
-
-function ParticipantCard({ participant }) {
-    const infoRef = useRef(null);
-
-    const showInfo = () => {
-        infoRef.current.classList.toggle("!block");
-    };
-    return (
-        <div onClick={showInfo} className="participant p-2 border rounded-lg">
-            <ul>
-                <li>Nome: {participant.name}</li>
-                <li>Cognome: {participant.surname}</li>
-            </ul>
-            <ul ref={infoRef} className="hidden">
-                <li>Cellulare: {participant.telephone_number}</li>
-                <li>Email: {participant.email}</li>
-            </ul>
-        </div>
+        <>
+            <section className="journey-details my-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                    <div className="sm:w-1/2">
+                        <h2 className="text-2xl sm:text-4xl sm:mb-6 font-semibold">
+                            {journey.destination}
+                        </h2>
+                        <div className="flex sm:flex-col gap-2 justify-between text-slate-600">
+                            <span className="font-semibold">Par: {journey.initial_date}</span>
+                            <span className="font-semibold">Arr: {journey.end_date}</span>
+                        </div>
+                    </div>
+                    <div className="sm:w-11/12">
+                        <img
+                            src={`${apiUrl}${journey?.image_path}`}
+                            alt=""
+                            className="object-cover h-full w-full rounded-lg"
+                        />
+                    </div>
+                </div>
+            </section>
+            <section className="mb-4">
+                <h2 className="text-xl font-semibold mb-2">
+                    Lista partecipanti ({participants.length})
+                </h2>
+                <div className="flex flex-col gap-3">
+                    {participants.map((person) => (
+                        <ParticipantCard key={person.id} participant={person} />
+                    ))}
+                </div>
+            </section>
+        </>
     );
 }
 

@@ -1,18 +1,29 @@
 import { Link } from "react-router-dom";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 function JourneyCard({ journey }) {
     const { id, destination, initial_date, end_date } = journey;
     return (
-        <Link
-            to={`/journey/${id}`}
-            className="journey-card p-2 border rounded-lg"
-        >
-            <ul>
-                <li>Destination: {destination}</li>
-                <li>Departure: {initial_date}</li>
-                <li>Arrival: {end_date}</li>
-            </ul>
-        </Link>
+        <div className="relative p-3 border rounded-lg overflow-hidden h-[125px] lg:h-[200px] flex">
+            <div
+                className="absolute inset-0 -z-20"
+                style={{
+                    backgroundImage: `url(${apiUrl}${journey?.image_path})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "bottom",
+                }}
+            ></div>
+            <div className="absolute inset-0 bg-black/65 -z-10"></div>
+            <Link
+                to={`/journey/${id}`}
+                className="flex w-full flex-col justify-between text-white journey-card"
+            >
+                <span>Destinatione: {destination}</span>
+                <span>Partenza: {initial_date}</span>
+                <span>Arrivo: {end_date}</span>
+            </Link>
+        </div>
     );
 }
 
