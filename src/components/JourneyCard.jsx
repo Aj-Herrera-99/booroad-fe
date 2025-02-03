@@ -19,9 +19,9 @@ function JourneyCard({ journey }) {
                 to={`/journey/${id}`}
                 className="flex w-full flex-col justify-between text-white journey-card"
             >
-                <span>Destination: {destination}</span>
-                <span>Departure: {initial_date}</span>
-                <span>Arrival: {end_date}</span>
+                <span>Destinatione: {destination}</span>
+                <span>Partenza: {initial_date}</span>
+                <span>Arrivo: {end_date}</span>
             </Link>
         </div>
     );

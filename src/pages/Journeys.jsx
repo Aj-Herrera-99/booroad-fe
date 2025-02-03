@@ -1,11 +1,13 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export function Journeys({ children, title }) {
     const cardsContRef = useRef(null);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const dropDownToggle = () => {
-        cardsContRef.current.classList.toggle("h-[260px]")
-        cardsContRef.current.classList.toggle("overflow-hidden")
+        cardsContRef.current.classList.toggle("h-[260px]");
+        cardsContRef.current.classList.toggle("overflow-hidden");
+        setIsDropdownOpen((curr) => !curr);
     };
 
     return (
@@ -20,9 +22,9 @@ export function Journeys({ children, title }) {
             <div className="text-end mt-3">
                 <button
                     onClick={dropDownToggle}
-                    className="text-sm border-x-2 rounded-r-md  rounded-l-md border-slate-400 p-1"
+                    className="text-sm border-x-2 rounded-r-md  rounded-l-md border-slate-400 px-1"
                 >
-                    Espandi
+                    {!isDropdownOpen ? "Espandi" : "Riduci"}
                 </button>
             </div>
         </section>

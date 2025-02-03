@@ -30,19 +30,8 @@ function Footer() {
                         <li>Link</li>
                     </a>
                 </ul>
-                <ul>
-                    <a href="/">
-                        <li>Link</li>
-                    </a>
-                    <a href="/">
-                        <li>Link</li>
-                    </a>
-                    <a href="/">
-                        <li>Link</li>
-                    </a>
-                </ul>
             </div>
-            <div className="icons [&>*]:text-2xl w-full flex justify-end gap-2">
+            <div className="icons [&>*]:text-xl grow flex justify-end gap-3">
                 <FaFacebook className="facebook" />
                 <FaInstagram className="instagram" />
                 <FaTwitter className="twitter" />
