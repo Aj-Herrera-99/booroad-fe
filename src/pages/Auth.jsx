@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // utenti fittizi registrati
@@ -20,33 +20,44 @@ import { useNavigate } from "react-router-dom";
 function Auth() {
     const userRef = useRef(null);
     const passwordRef = useRef(null);
-
     const [isIncorrect, setIsIncorrect] = useState(false);
 
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.sessionStorage.setItem("user", userRef.current.value);
+        window.localStorage.setItem("user", userRef.current.value);
         if (
             userRef.current.value === "admin" &&
             passwordRef.current.value === "admin"
         ) {
             navigate("/home");
         } else if (
-            userRef.current.value === "guide1" &&
-            passwordRef.current.value === "guide1"
+            userRef.current.value === "aj" &&
+            passwordRef.current.value === "aj"
         ) {
             navigate("/journey/1");
         } else if (
-            userRef.current.value === "guide2" &&
-            passwordRef.current.value === "guide2"
+            userRef.current.value === "daniel" &&
+            passwordRef.current.value === "daniel"
         ) {
             navigate("/journey/2");
-        } else {
+        } else if (
+            userRef.current.value === "danilo" &&
+            passwordRef.current.value === "danilo"
+        ) {
+            navigate("/journey/3");
+        }
+        {
             setIsIncorrect(true);
         }
     };
+
+    useEffect(() => {
+        const currUser = window.localStorage.getItem("user");
+        console.log(currUser);
+        if (currUser) navigate("/home");
+    }, []);
 
     return (
         <>
