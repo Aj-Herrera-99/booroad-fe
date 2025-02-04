@@ -14,15 +14,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-<<<<<<< HEAD
-body {
-=======
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
->>>>>>> 630dd1b1bca3704a58b8401f2f5fe53ae0f78630
+body {
     @apply bg-emerald-50
 }
 
