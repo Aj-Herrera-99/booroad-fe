@@ -1,19 +1,21 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const admin = {
-    user: "admin",
-    password: "admin",
-};
+// utenti fittizi registrati
 
-const guide1 = {
-    user: "guide1",
-    password: "guide1",
-};
-const guide2 = {
-    user: "guide2",
-    password: "guide2",
-};
+// const admin = {
+//     user: "admin",
+//     password: "admin",
+// };
+
+// const guide1 = {
+//     user: "guide1",
+//     password: "guide1",
+// };
+// const guide2 = {
+//     user: "guide2",
+//     password: "guide2",
+// };
 
 function Auth() {
     const userRef = useRef(null);
@@ -25,6 +27,7 @@ function Auth() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        window.sessionStorage.setItem("user", userRef.current.value);
         if (
             userRef.current.value === "admin" &&
             passwordRef.current.value === "admin"
@@ -47,9 +50,9 @@ function Auth() {
 
     return (
         <>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-[50vw]">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-[50vw] max-w-[300px]">
                 <h1 className="font-semibold text-2xl">Accedi</h1>
-                <form className=" border-slate-300/70 border rounded-md mt-2 p-2 flex flex-col gap-3">
+                <form className=" border-slate-300/70 border rounded-md mt-2 p-2 flex flex-col gap-3 [&_input]:border [&_input]:border-slate-300">
                     <div className="flex flex-col">
                         <label htmlFor="user">Utente</label>
                         <input
@@ -58,6 +61,7 @@ function Auth() {
                             type="text"
                             name="user"
                             id="user"
+                            autoFocus
                         />
                     </div>
                     <div className="flex flex-col">

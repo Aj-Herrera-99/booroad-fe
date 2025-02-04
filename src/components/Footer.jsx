@@ -7,7 +7,7 @@ function Footer() {
     return (
         <footer className="h-[10vh] flex items-center gap-4 p-4 bg-teal-400">
             <h2 className="font-light">BooRoad inc.</h2>
-            <div className="links flex gap-4 text-sm">
+            {/* <div className="links flex gap-4 text-sm">
                 <ul>
                     <a href="/">
                         <li>Link</li>
@@ -30,7 +30,7 @@ function Footer() {
                         <li>Link</li>
                     </a>
                 </ul>
-            </div>
+            </div> */}
             <div className="icons [&>*]:text-xl grow flex justify-end gap-3">
                 <FaFacebook className="facebook" />
                 <FaInstagram className="instagram" />

@@ -1,9 +1,17 @@
 import { useRef } from "react";
-import { FaMagnifyingGlass, FaXmark } from "react-icons/fa6";
+import { FaXmark } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
+const appLinks = [
+    { to: "/", label: "Login" },
+    { to: "/home", label: "Viaggi" },
+    { to: "/about", label: "Chi siamo" },
+    { to: "/contacts", label: "Contatti" },
+];
+
+// todo: nascondere hamburger menu quando si è nella auth page
 function Header() {
     const dropDownRef = useRef(null);
     const navigate = useNavigate();
@@ -44,8 +52,23 @@ function Header() {
             <Link to={"/home"} className=" w-[60px]">
                 <img src="/logo_2.png" alt="" />
             </Link>
+            {/* navbar */}
+            <nav className="hidden sm:flex gap-3 text-center">
+                {appLinks.map((link, i) => (
+                    <NavLink
+                        key={i}
+                        to={link.to}
+                        className={({ isActive }) =>
+                            "py-1 px-2 rounded-lg text-black/60" +
+                            (isActive ? " !text-black" : "")
+                        }
+                    >
+                        {link.label}
+                    </NavLink>
+                ))}
+            </nav>
             {/* Hamburger icon */}
-            <div className="text-2xl w-1/3 flex justify-end">
+            <div className="md:hidden text-2xl w-1/3 flex justify-end">
                 <GiHamburgerMenu className="" onClick={showDropdown} />
             </div>
             {/* Dropdown menu */}
@@ -53,13 +76,6 @@ function Header() {
         </header>
     );
 }
-
-const appLinks = [
-    { to: "/", label: "Login" },
-    { to: "/home", label: "Viaggi" },
-    { to: "/about", label: "Chi siamo" },
-    { to: "/contacts", label: "Contatti" },
-];
 
 function DropdownMenu({ dropdownRef }) {
     const hideDropdown = () => {
@@ -70,24 +86,15 @@ function DropdownMenu({ dropdownRef }) {
             ref={dropdownRef}
             className="fixed inset-0 h-fit bg-black/95 transition-all duration-300 -translate-y-full text-white flex flex-col p-4 text-lg ease-out rounded-b-2xl gap-2"
         >
-            <form className="flex items-center gap-2 px-6">
-                <input
-                    className="rounded-md px-2 py-1 text-black grow"
-                    type="search"
-                    name="search"
-                    id="search"
-                />
-                <FaMagnifyingGlass className="text-2xl text-white" />
-            </form>
-            <nav className="flex flex-col gap-3">
+            <nav className="flex flex-col gap-3 text-center">
                 {appLinks.map((link, i) => (
                     <NavLink
                         onClick={hideDropdown}
                         key={i}
                         to={link.to}
                         className={({ isActive }) =>
-                            "py-1 px-2 rounded-lg" +
-                            (isActive ? " border-b " : "")
+                            "py-1 px-2 rounded-lg text-white/60" +
+                            (isActive ? " !text-white" : "")
                         }
                     >
                         {link.label}
