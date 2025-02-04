@@ -19,7 +19,11 @@ html {
 }
 
 body {
-    @apply bg-emerald-50
+    @apply bg-teal-100/40
+}
+
+.journey-card:hover .overlay {
+    background: rgba(0, 0, 0, .75);
 }
 
 /* body {

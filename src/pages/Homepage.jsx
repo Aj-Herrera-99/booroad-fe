@@ -23,21 +23,16 @@ function Homepage() {
 
     return (
         <>
-            <Journeys title="Viaggi in corso">
+            <Journeys title={`Viaggi in corso (${journeys.length})`}>
                 {journeys.map((journey) => (
                     <JourneyCard key={journey.id} journey={journey} />
                 ))}
             </Journeys>
-            <Journeys title="Viaggi in programma">
+            <Journeys title={`Viaggi in programma (${journeys.length})`}>
                 {journeys.map((journey) => (
                     <JourneyCard key={journey.id} journey={journey} />
                 ))}
             </Journeys>
-            {/* <Journeys>
-                {journeys.map((journey) => (
-                    <JourneyCard key={journey?.id} />
-                ))}
-            </Journeys> */}
         </>
     );
 }
